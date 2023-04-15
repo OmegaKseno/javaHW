@@ -2,26 +2,23 @@ package org.example.hw1;
 import java.util.Scanner;
 public class hw1 {
     public static void main(String[] args) {
-
-        sumNumbersAfterNegatives();
+        String a = " the sky is blue ";
+        System.out.println(coupString(a));
     }
 
     /**
-     * sumNumbersAfterNegatives - Выводит сумму положительных чисел, после которых следует отрицательное число.
+     *
+     * @param str - Принимает строку
+     * @return - Перевернутая строка
      */
-    public static void sumNumbersAfterNegatives (){
-        Scanner scanner = new Scanner(System.in);
-        int first = scanner.nextInt();
-        int second = 0;
-        int sum = 0;
-        while(first!=0) {
-            second = scanner.nextInt();
-            if (first>0&&second<0){
-              sum+=first;
-            }
-            first=second  ;
+    public static String coupString(String str) {
+        String[] arr = str.split(" ");
+        String result = "";
+        for (int i = arr.length-1; i >=0 ; i--) {
+            result += " " + arr[i];
         }
-        System.out.println(sum);
+        return result.trim();
+
     }
 
 }
